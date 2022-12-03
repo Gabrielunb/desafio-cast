@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "cursos".
@@ -60,5 +61,14 @@ class Cursos extends \yii\db\ActiveRecord
     public function getCodigoCategoria()
     {
         return $this->hasOne(Categorias::class, ['codigo_categoria' => 'codigo_categoria']);
+    }
+
+    public function dropDownListCategorias(){
+        $query = (new \yii\db\Query())
+            ->select(['codigo_categoria', 'descricao'])
+            ->from(Categorias::tableName())
+            ->all();
+
+        return ArrayHelper::map($query, 'codigo_categoria', 'descricao');
     }
 }
