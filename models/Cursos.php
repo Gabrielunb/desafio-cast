@@ -48,7 +48,7 @@ class Cursos extends \yii\db\ActiveRecord
             'codigo_curso' => 'Codigo Curso',
             'data_inicio' => 'Data Inicio',
             'data_termino' => 'Data Termino',
-            'qtd_turma' => 'Qtd Turma',
+            'qtd_turma' => 'Quantidade Turma',
             'codigo_categoria' => 'Codigo Categoria',
         ];
     }
@@ -70,5 +70,12 @@ class Cursos extends \yii\db\ActiveRecord
             ->all();
 
         return ArrayHelper::map($query, 'codigo_categoria', 'descricao');
+    }
+
+    public function validaDatas(){
+        if(strtotime($this->data_inicio) < strtotime($this->data_termino)){
+            $this->addError('start_date','Please give correct Start and End dates');
+            $this->addError('end_date','Please give correct Start and End dates');
+        }
     }
 }

@@ -68,9 +68,10 @@ class CursosController extends Controller
     public function actionCreate()
     {
         $model = new Cursos();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+        $post = $this->request->post();
+        if ($model->load($post)) {
+            var_dump($model);
+            if ($model->save()) {
                 return $this->redirect(['view', 'codigo_curso' => $model->codigo_curso]);
             }
         } else {
