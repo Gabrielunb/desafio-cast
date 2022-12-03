@@ -25,23 +25,35 @@ $this->title = 'Cursos';
     <br>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'codigo_curso',
-            'data_inicio',
-            'data_termino',
-            'qtd_turma',
-            'codigo_categoria',
+            [
+                'attribute' => 'codigo_curso',
+            ],
+            [
+                'attribute' => 'qtd_turma',
+            ],
+            [
+                'attribute' => 'data_inicio',
+                'value' => function ($model) {
+                    return date('d/m/Y', strtotime($model->data_inicio));
+                }
+            ],
+            [
+                'attribute' => 'data_termino',
+                'value' => function ($model) {
+                    return date('d/m/Y', strtotime($model->data_termino));
+                }
+            ],
+            [
+                //Descrição da categoria
+                'attribute' => 'relCategorias.descricao',
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Cursos $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'codigo_curso' => $model->codigo_curso]);
-                 }
+                }
             ],
         ],
     ]); ?>
-
-
 </div>

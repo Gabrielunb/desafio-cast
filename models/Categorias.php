@@ -40,7 +40,7 @@ class Categorias extends \yii\db\ActiveRecord
     {
         return [
             'codigo_categoria' => 'Codigo Categoria',
-            'descricao' => 'Descricao',
+            'descricao' => 'Descrição',
         ];
     }
 

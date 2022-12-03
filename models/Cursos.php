@@ -47,7 +47,7 @@ class Cursos extends \yii\db\ActiveRecord
         return [
             'codigo_curso' => 'Codigo Curso',
             'data_inicio' => 'Data Inicio',
-            'data_termino' => 'Data Termino',
+            'data_termino' => 'Data Término',
             'qtd_turma' => 'Quantidade Turma',
             'codigo_categoria' => 'Codigo Categoria',
         ];
@@ -63,6 +63,8 @@ class Cursos extends \yii\db\ActiveRecord
         return $this->hasOne(Categorias::class, ['codigo_categoria' => 'codigo_categoria']);
     }
 
+
+
     public function dropDownListCategorias(){
         $query = (new \yii\db\Query())
             ->select(['codigo_categoria', 'descricao'])
@@ -70,6 +72,16 @@ class Cursos extends \yii\db\ActiveRecord
             ->all();
 
         return ArrayHelper::map($query, 'codigo_categoria', 'descricao');
+    }
+
+    /**
+     * Gets query for [descricao].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRelCategorias()
+    {
+        return $this->hasOne(Categorias::class, ['codigo_categoria' => 'codigo_categoria']);
     }
 
     public function validaDatas(){

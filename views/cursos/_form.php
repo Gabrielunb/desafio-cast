@@ -18,14 +18,8 @@ use \kartik\date\DatePicker;
     <div class="form-control">
         <div class="row">
             <div class="col-md-3">
-                <?php
-                echo '<label class="control-label">Data Início</label>';
-                echo DatePicker::widget([
-                    'model' => $model,
-                    'language' => 'pt-BR',
-                    'attribute' => 'data_inicio',
+                <?php echo $form->field($model, 'data_inicio')->widget(DatePicker::classname(), [
                     'options' => ['placeholder' => 'Data Início'],
-                    'type' => DatePicker::TYPE_COMPONENT_APPEND,
                     'pickerIcon' => '<i class="fas fa-calendar-alt text-primary"></i>',
                     'removeIcon' => '<i class="fas fa-trash text-danger"></i>',
                     'pluginOptions' => [
@@ -36,14 +30,8 @@ use \kartik\date\DatePicker;
                 ?>
             </div>
             <div class="col-md-3">
-                <?php
-                echo '<label class="control-label">Data Término</label>';
-                echo DatePicker::widget([
-                    'model' => $model,
-                    'language' => 'pt-BR',
-                    'attribute' => 'data_termino',
+                <?php echo $form->field($model, 'data_termino')->widget(DatePicker::classname(), [
                     'options' => ['placeholder' => 'Data Término'],
-                    'type' => DatePicker::TYPE_COMPONENT_APPEND,
                     'pickerIcon' => '<i class="fas fa-calendar-alt text-primary"></i>',
                     'removeIcon' => '<i class="fas fa-trash text-danger"></i>',
                     'pluginOptions' => [

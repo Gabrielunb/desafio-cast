@@ -70,9 +70,10 @@ class CursosController extends Controller
         $model = new Cursos();
         $post = $this->request->post();
         if ($model->load($post)) {
-            var_dump($model);
+            $model->data_inicio = date('Y-m-d', strtotime(strtr($model->data_inicio, '/', '-')));
+            $model->data_termino = date('Y-m-d', strtotime(strtr($model->data_termino, '/', '-')));
             if ($model->save()) {
-                return $this->redirect(['view', 'codigo_curso' => $model->codigo_curso]);
+                return $this->redirect(['index']);
             }
         } else {
             $model->loadDefaultValues();
