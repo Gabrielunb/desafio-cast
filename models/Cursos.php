@@ -33,7 +33,7 @@ class Cursos extends \yii\db\ActiveRecord
     {
         return [
             [['data_inicio', 'data_termino', 'codigo_categoria'], 'required'],
-            [['data_inicio', 'data_termino'], 'safe'],
+            [['data_inicio', 'data_termino'], 'validateDate'],
             [['qtd_turma', 'codigo_categoria'], 'integer'],
             [['codigo_categoria'], 'exist', 'skipOnError' => true, 'targetClass' => Categorias::class, 'targetAttribute' => ['codigo_categoria' => 'codigo_categoria']],
         ];
@@ -64,8 +64,8 @@ class Cursos extends \yii\db\ActiveRecord
     }
 
 
-
-    public function dropDownListCategorias(){
+    public function dropDownListCategorias()
+    {
         $query = (new \yii\db\Query())
             ->select(['codigo_categoria', 'descricao'])
             ->from(Categorias::tableName())
@@ -84,10 +84,12 @@ class Cursos extends \yii\db\ActiveRecord
         return $this->hasOne(Categorias::class, ['codigo_categoria' => 'codigo_categoria']);
     }
 
-    public function validaDatas(){
-        if(strtotime($this->data_inicio) < strtotime($this->data_termino)){
-            $this->addError('start_date','Please give correct Start and End dates');
-            $this->addError('end_date','Please give correct Start and End dates');
+    public function validateDate($attribute, $params, $validator)
+    {
+        $inicio = strtotime(strtr($this->data_inicio, '/', '-'));
+        $termino = strtotime(strtr($this->data_termino, '/', '-'));
+        if(($inicio) > ($termino)){
+            $this->addError('data_inicio', 'Data início tem que ser anterior a data de término');
         }
     }
 }

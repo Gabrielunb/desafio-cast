@@ -48,12 +48,20 @@ class CursosSearch extends Cursos
             'query' => $query,
         ]);
 
+
         $this->load($params);
+
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
+        }
+        if ($this->data_inicio){
+            $this->data_inicio = date('Y-m-d', strtotime(strtr($this->data_inicio, '/', '-')));
+        }
+        if ($this->data_termino){
+            $this->data_termino = date('Y-m-d', strtotime(strtr($this->data_termino, '/', '-')));
         }
 
         // grid filtering conditions

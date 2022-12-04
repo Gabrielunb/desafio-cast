@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use \kartik\date\DatePicker;
 
 /** @var yii\web\View $this */
 /** @var app\models\CursosSearch $model */
@@ -19,10 +20,30 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'codigo_curso') ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'data_inicio') ?>
+            <?php echo $form->field($model, 'data_inicio')->widget(DatePicker::classname(), [
+                'options' => ['placeholder' => 'Data Início'],
+                'value' => !empty($model->data_inicio) ? $model->data_inicio = date('d/m/Y', strtotime($model->data_inicio)) : '',
+                'pickerIcon' => '<i class="fas fa-calendar-alt text-primary"></i>',
+                'removeIcon' => '<i class="fas fa-trash text-danger"></i>',
+                'pluginOptions' => [
+                    'format' => 'dd/mm/yyyy',
+                    'autoclose' => true,
+                ]
+            ]);
+            ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'data_termino') ?>
+            <?php echo $form->field($model, 'data_termino')->widget(DatePicker::classname(), [
+                'options' => ['placeholder' => 'Data Término'],
+                'value' => !empty($model->data_termino) ? $model->data_termino = date('d/m/Y', strtotime($model->data_termino)) : '',
+                'pickerIcon' => '<i class="fas fa-calendar-alt text-primary"></i>',
+                'removeIcon' => '<i class="fas fa-trash text-danger"></i>',
+                'pluginOptions' => [
+                    'format' => 'dd/mm/yyyy',
+                    'autoclose' => true,
+                ]
+            ]);
+            ?>
         </div>
         <div class="col-md-3">
             <?= $form->field($model, 'qtd_turma') ?>

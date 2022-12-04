@@ -16,10 +16,6 @@ $this->title = 'Cursos';
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-
-    </p>
-
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
     <br>
     <br>
@@ -31,6 +27,9 @@ $this->title = 'Cursos';
             ],
             [
                 'attribute' => 'qtd_turma',
+                'value' => function ($model) {
+                    return $model->qtd_turma ? $model->qtd_turma : '0';
+                }
             ],
             [
                 'attribute' => 'data_inicio',

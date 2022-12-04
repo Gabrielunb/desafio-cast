@@ -7,6 +7,7 @@ use app\models\CursosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use function PHPUnit\Framework\isEmpty;
 
 /**
  * CursosController implements the CRUD actions for Cursos model.
@@ -39,24 +40,16 @@ class CursosController extends Controller
     public function actionIndex()
     {
         $searchModel = new CursosSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $params = $this->request->queryParams;
+        $dataProvider = $searchModel->search($params);
+        if (!isEmpty($dataProvider)) {
+            var_dump($dataProvider);
+            die();
+        }
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
-     * Displays a single Cursos model.
-     * @param int $codigo_curso Codigo Curso
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($codigo_curso)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($codigo_curso),
         ]);
     }
 
@@ -72,8 +65,11 @@ class CursosController extends Controller
         if ($model->load($post)) {
             $model->data_inicio = date('Y-m-d', strtotime(strtr($model->data_inicio, '/', '-')));
             $model->data_termino = date('Y-m-d', strtotime(strtr($model->data_termino, '/', '-')));
-            if ($model->save()) {
+            if ($model->save() ) {
                 return $this->redirect(['index']);
+            }else{
+                $model->data_inicio = date('d/m/Y', strtotime($model->data_inicio));
+                $model->data_termino = date('d/m/Y', strtotime($model->data_termino));
             }
         } else {
             $model->loadDefaultValues();
@@ -94,9 +90,19 @@ class CursosController extends Controller
     public function actionUpdate($codigo_curso)
     {
         $model = $this->findModel($codigo_curso);
+        $post = $this->request->post();
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'codigo_curso' => $model->codigo_curso]);
+        $model->data_inicio = date('d/m/Y', strtotime($model->data_inicio));
+        $model->data_termino = date('d/m/Y', strtotime($model->data_termino));
+
+        if ($model->load($post)) {
+            $model->data_inicio = date('Y-m-d', strtotime(strtr($model->data_inicio, '/', '-')));
+            $model->data_termino = date('Y-m-d', strtotime(strtr($model->data_termino, '/', '-')));
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
+        } else {
+            $model->loadDefaultValues();
         }
 
         return $this->render('update', [
