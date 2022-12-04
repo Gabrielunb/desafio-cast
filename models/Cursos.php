@@ -91,7 +91,9 @@ class Cursos extends \yii\db\ActiveRecord
         $inicio = strtotime(strtr($this->data_inicio, '/', '-'));
         $termino = strtotime(strtr($this->data_termino, '/', '-'));
         if(($inicio) > ($termino)){
-            $this->addError('data_inicio', 'Data início tem que ser anterior a data de término');
+            $this->addError('data_inicio', 'Data início tem que ser menor que a data de término');
+        }elseif ($inicio < strtotime(date('Y-m-d'))){
+            $this->addError('data_inicio', 'Data início menor que a data atual');
         }
     }
 }
