@@ -16,8 +16,8 @@ use \kartik\date\DatePicker;
         'method' => 'get',
     ]); ?>
     <div class="row">
-        <div class="col-md-3">
-            <?= $form->field($model, 'codigo_curso') ?>
+        <div class="col-md-12">
+            <?= $form->field($model, 'descricao_assunto')->textInput() ?>
         </div>
         <div class="col-md-3">
             <?php echo $form->field($model, 'data_inicio')->widget(DatePicker::classname(), [

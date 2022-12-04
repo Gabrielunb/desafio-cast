@@ -19,6 +19,7 @@ class CursosSearch extends Cursos
         return [
             [['codigo_curso', 'qtd_turma', 'codigo_categoria'], 'integer'],
             [['data_inicio', 'data_termino'], 'safe'],
+            [['descricao_assunto'], 'string', 'max' => 200]
         ];
     }
 
@@ -67,6 +68,7 @@ class CursosSearch extends Cursos
         // grid filtering conditions
         $query->andFilterWhere([
             'codigo_curso' => $this->codigo_curso,
+            'descricao_assunto' => $this->descricao_assunto,
             'data_inicio' => $this->data_inicio,
             'data_termino' => $this->data_termino,
             'qtd_turma' => $this->qtd_turma,

@@ -23,7 +23,7 @@ $this->title = 'Cursos';
         'dataProvider' => $dataProvider,
         'columns' => [
             [
-                'attribute' => 'codigo_curso',
+                'attribute' => 'descricao_assunto',
             ],
             [
                 'attribute' => 'qtd_turma',

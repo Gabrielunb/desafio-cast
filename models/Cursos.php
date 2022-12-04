@@ -9,6 +9,7 @@ use yii\helpers\ArrayHelper;
  * This is the model class for table "cursos".
  *
  * @property int $codigo_curso
+ * @property string $descricao_assunto
  * @property string $data_inicio
  * @property string $data_termino
  * @property int|null $qtd_turma
@@ -32,7 +33,7 @@ class Cursos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['data_inicio', 'data_termino', 'codigo_categoria'], 'required'],
+            [['descricao_assunto', 'data_inicio', 'data_termino', 'codigo_categoria'], 'required'],
             [['data_inicio', 'data_termino'], 'validateDate'],
             [['qtd_turma', 'codigo_categoria'], 'integer'],
             [['codigo_categoria'], 'exist', 'skipOnError' => true, 'targetClass' => Categorias::class, 'targetAttribute' => ['codigo_categoria' => 'codigo_categoria']],
@@ -46,6 +47,7 @@ class Cursos extends \yii\db\ActiveRecord
     {
         return [
             'codigo_curso' => 'Codigo Curso',
+            'descricao_assunto' => 'Descrição Assunto',
             'data_inicio' => 'Data Inicio',
             'data_termino' => 'Data Término',
             'qtd_turma' => 'Quantidade Turma',

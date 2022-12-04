@@ -14,6 +14,7 @@ class m221202_145014_criar_table_cursos extends Migration
     {
         $this->createTable('cursos', [
             'codigo_curso' => 'pk',
+            'descricao_assunto' => Schema::TYPE_TEXT . ' NOT NULL',
             'data_inicio' => Schema::TYPE_DATE . ' NOT NULL',
             'data_termino' => Schema::TYPE_DATE . ' NOT NULL',
             'qtd_turma' => Schema::TYPE_INTEGER,
