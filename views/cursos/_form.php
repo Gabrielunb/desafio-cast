@@ -14,7 +14,10 @@ use \kartik\date\DatePicker;
 
 <div class="cursos-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(
+        ['options' =>
+            ['enctype' => 'multipart/form-data']]
+    ); ?>
     <div class="form-control">
         <div class="row">
             <div class="col-md-12">
@@ -64,7 +67,7 @@ use \kartik\date\DatePicker;
             <div class="form-group">
                 <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
                 <?php
-                if (!$model->isNewRecord){
+                if (!$model->isNewRecord) {
                     echo Html::a('Delete', ['delete', 'codigo_curso' => $model->codigo_curso], [
                         'class' => 'btn btn-danger',
                         'data' => [
