@@ -21,6 +21,11 @@ $this->title = 'Cursos';
     <br>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'layout' => "{items}",
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'nullDisplay' => ''
+        ],
         'columns' => [
             [
                 'attribute' => 'descricao_assunto',
@@ -48,7 +53,7 @@ $this->title = 'Cursos';
                 'attribute' => 'relCategorias.descricao',
             ],
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::className(),'template'=>'{update} {delete}' ,
                 'urlCreator' => function ($action, Cursos $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'codigo_curso' => $model->codigo_curso]);
                 }
