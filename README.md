@@ -21,6 +21,7 @@ INSTALAÇÃO
 2 - INSTALAR O APACHE(XAMPP) (xampp-windows-x64-7.4.33-0-VC15-installer)<br>
 3 - ADICIONAR A PASTA DO PHP AO PATH(VARIAVÉIS DE AMBIENTE)<br>
 4 - INSTALAR O COMPOSER<br>
+5 - INSTALAR GIT [DONWLOAD](https://git-scm.com/download/win) (OPCIONAL)
 
 
 
