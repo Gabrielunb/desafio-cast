@@ -4,7 +4,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=desafiocast',
     'username' => 'root',
-    'password' => 'Kokakola!1',
+    'password' => 'SENHA AQUI',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
