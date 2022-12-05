@@ -52,7 +52,7 @@ $config = [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'pluralize' => false,
-                    'controller' => 'api/cursos'
+                    'controller' => 'api/cursos',
                 ],
             ],
         ],

@@ -42,10 +42,6 @@ class CursosController extends Controller
         $searchModel = new CursosSearch();
         $params = $this->request->queryParams;
         $dataProvider = $searchModel->search($params);
-        if (!isEmpty($dataProvider)) {
-            var_dump($dataProvider);
-            die();
-        }
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -62,6 +58,7 @@ class CursosController extends Controller
     {
         $model = new Cursos();
         $post = $this->request->post();
+
         if ($model->load($post)) {
             $model->data_inicio = date('Y-m-d', strtotime(strtr($model->data_inicio, '/', '-')));
             $model->data_termino = date('Y-m-d', strtotime(strtr($model->data_termino, '/', '-')));
