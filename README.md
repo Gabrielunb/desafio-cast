@@ -65,7 +65,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=desafiocast',
     'username' => 'root',
-    'password' => '1234',
+    'password' => 'DIGITE A SENHA ROOT AQUI',
     'charset' => 'utf8',
 ];
 ```
@@ -85,7 +85,32 @@ NO CASO ELE PEDE CONFIRMAÇÃO ENTÃO BASTA DIGITAR.
 yes
 ~~~
 
-TESTING
+TESTANDO
 -------
+
+ABRA O XAPP E START O APACHE.<br>
+POR PADRÃO O APACHE USA A PORTA 80<br>
+
+~~~
+http://localhost/desafio-cast/web/
+~~~
+
+
+API
+-------
+PARA UTILIZAÇÃO DA API PRECISA DE ALGUM PROGRAMA COMO <b>INSOMNIA/POSTMAN</b>
+BASTA UTILIZAR A SEGUINTE URL PARA ACESSO A API<br>
+
+~~~
+http://localhost/desafio-cast/web/api/cursos
+~~~
+
+
+GET /cursos: listar todos os cursos página por página;
+HEAD /cursos: mostrar a informações gerais da listagem de cursos;
+POST /cursos: criar um novo curso;
+GET /cursos/123: retorna detalhes do curso 123;
+PATCH /cursos/123 e PUT /users/123: atualiza o curso 123;
+DELETE /cursos/123: deleta o curso 123;
 
 
