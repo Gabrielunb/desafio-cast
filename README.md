@@ -107,11 +107,11 @@ http://localhost/desafio-cast/web/api/cursos
 ~~~
 
 
-GET /cursos: listar todos os cursos página por página;
-HEAD /cursos: mostrar a informações gerais da listagem de cursos;
-POST /cursos: criar um novo curso;
-GET /cursos/123: retorna detalhes do curso 123;
-PATCH /cursos/123 e PUT /users/123: atualiza o curso 123;
-DELETE /cursos/123: deleta o curso 123;
+GET /cursos: listar todos os cursos página por página;<br>
+HEAD /cursos: mostrar a informações gerais da listagem de cursos;<br>
+POST /cursos: criar um novo curso;<br>
+GET /cursos/123: retorna detalhes do curso 123;<br>
+PATCH /cursos/123 e PUT /users/123: atualiza o curso 123;<br>
+DELETE /cursos/123: deleta o curso 123;<br>
 
 
