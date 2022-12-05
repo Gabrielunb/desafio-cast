@@ -10,7 +10,8 @@ REQUERIMENTOS
 MYSQL [WINDOWS DONWLOAD](https://dev.mysql.com/downloads/installer/)<br>
 APACHE [WINDOWS DONWLOAD](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.33/xampp-windows-x64-7.4.33-0-VC15-installer.exe)<br>
 COMPOSER [WINDOWS DONWLOAD](https://getcomposer.org/Composer-Setup.exe)<br>
-PROGRAMA PARA TESTE DE API A CRITÉRIO
+PROGRAMA PARA TESTE DE API A CRITÉRIO<br>
+A CONFIGURAÇÃO PODE SER FEITA PARA LINUX TAMBÈM SEGUINDO OS MESMOS COMANDOS BASTA INSTALAR ESSAS VERSÕES PARA LINUX.
 
 INSTALAÇÃO
 ------------
@@ -19,7 +20,7 @@ INSTALAÇÃO
 
 1 - INSTALAR O MYSQL<br>
 2 - INSTALAR O APACHE(XAMPP) (xampp-windows-x64-7.4.33-0-VC15-installer)<br>
-3 - ADICIONAR A PASTA DO PHP AO PATH(VARIAVÉIS DE AMBIENTE) OU PODE MARCAR A CAIXA PARA ADICIONAR AO PATH NA INSTALAÇÃO DO COMPOSER<br>
+3 - ADICIONAR A PASTA DO 'C:\xampp\php' AO PATH(VARIAVÉIS DE AMBIENTE) OU PODE MARCAR A CAIXA PARA ADICIONAR AO PATH NA INSTALAÇÃO DO COMPOSER<br>
 4 - INSTALAR O COMPOSER<br>
 5 - INSTALAR GIT [DONWLOAD](https://git-scm.com/download/win) (OPCIONAL)
 
@@ -110,4 +111,6 @@ GET /cursos/123: retorna detalhes do curso 123;<br>
 PATCH /cursos/123 e PUT /users/123: atualiza o curso 123;<br>
 DELETE /cursos/123: deleta o curso 123;<br>
 
-
+HOOKS
+-------
+NÃO FOI UTILIZADO HOOKS NESSE PROJETO.
