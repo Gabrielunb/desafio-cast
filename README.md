@@ -7,23 +7,21 @@
 REQUETIMENTOS
 ------------
 
-PHP 7.4.33 [WINDOWS DOWNLOAD](https://windows.php.net/downloads/releases/php-7.4.33-nts-Win32-vc15-x64.zip)<br>
-COMPOSER [WINDOWS DONWLOAD](https://getcomposer.org/Composer-Setup.exe)<br>
 MYSQL [WINDOWS DONWLOAD](https://dev.mysql.com/downloads/installer/)<br>
 APACHE [WINDOWS DONWLOAD](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.33/xampp-windows-x64-7.4.33-0-VC15-installer.exe)<br>
+COMPOSER [WINDOWS DONWLOAD](https://getcomposer.org/Composer-Setup.exe)<br>
 PROGRAMA PARA TESTE DE API A CRITÉRIO
-
 
 INSTALAÇÃO
 ------------
 
 ### INSTALAR
 
-1 - EXTRAIR O PHP PARA ALGUMA PASTA,PODE EXTRAIR NA PASTA ARQUIVOS E PROGRAMAS DO WINDOWS. <br>
-2 - ADICIONAR A PASTA DO PHP AO PATH(VARIAVÉIS DE AMBIENTE)<br>
-3 - INSTALAR O COMPOSER<br>
-4 - INSTALAR O MYSQL<br>
-5 - INSTALAR O APACHE(XAMPP) (xampp-windows-x64-7.4.33-0-VC15-installer)<br>
+1 - INSTALAR O MYSQL<br>
+2 - INSTALAR O APACHE(XAMPP) (xampp-windows-x64-7.4.33-0-VC15-installer)<br>
+3 - ADICIONAR A PASTA DO PHP AO PATH(VARIAVÉIS DE AMBIENTE)<br>
+4 - INSTALAR O COMPOSER<br>
+
 
 
 ### CONFIGURAÇÃO
@@ -36,9 +34,6 @@ COMANDO PARA CLONAR
 ~~~
 git clone https://github.com/Gabrielunb/desafio-cast
 ~~~
-
- - COLAR O ARQUIVO <b>php.ini</b> QUE ESTÁ NA RAIZ DESSE PROJETO DENTRO DA PASTA DO PHP
- - COLAR O ARQUIVO <b>php_xdebug.dll</b> DENTRO DA PASTA php-7.4.33\ext <br>
 
 COM O MYSQL JÁ INSTALADO E CONFIGURADO A SENHA ROOT, RODE O SEGUINTE SQL NO CONSOLE
 
@@ -77,7 +72,7 @@ PARA RODAR AS MIGRATIONS É PRECISO JÁ TER CRIADO O SCHEMA E CONFIGURADO BANCO 
 COMANDO PARA RODAR AS MIGRATIONS
 
 ~~~
-php yii migration
+php yii migrate
 ~~~
 
 NO CASO ELE PEDE CONFIRMAÇÃO ENTÃO BASTA DIGITAR.
@@ -89,7 +84,7 @@ yes
 TESTANDO
 -------
 
-ABRA O XAPP E START O APACHE.<br>
+ABRA O XAMPP E START O APACHE.<br>
 POR PADRÃO O APACHE USA A PORTA 80<br>
 
 ~~~
