@@ -120,13 +120,13 @@ TELAS
 -------
 
 ABAIXO ESTÁ A TELA PRINCIPAL DO PROJETO
-![Tela Principal](https://github.com/Gabrielunb/desafio-cast/blob/master/home-page.png?raw=true)
+![Tela Principal](https://github.com/Gabrielunb/desafio-cast/blob/master/web/imagens/home-page.png?raw=true)
 
 ABAIXO ESTÁ A INDEX DA TELA DE CURSOS 
-![Tela Principal Cursos](https://github.com/Gabrielunb/desafio-cast/blob/master/index.png?raw=true)
+![Tela Principal Cursos](https://github.com/Gabrielunb/desafio-cast/blob/master/web/imagens/index.png?raw=true)
 
 ABAIXO ESTÁ O FORMULÁRIO PARA PREENCHIMENTO PARA CADASTRO/ATUALIZAÇÃO DE CURSOS, BASTA CLICAR EM CADASTRAR CURSO NA TELA ANTERIOR.
-![Tela de Cadastro de Curso](https://github.com/Gabrielunb/desafio-cast/blob/master/form-cursos.png?raw=true)
+![Tela de Cadastro de Curso](https://github.com/Gabrielunb/desafio-cast/blob/master/web/imagens/form-cursos.png?raw=true)
 
 NESTA TELA SE ENCONTRA AS CATEGORIAS CADASTRADAS
-![Tela Principal Categorias](https://github.com/Gabrielunb/desafio-cast/blob/master/index-categorias.png?raw=true)
+![Tela Principal Categorias](https://github.com/Gabrielunb/desafio-cast/blob/master/web/imagens/index-categorias.png?raw=true)
