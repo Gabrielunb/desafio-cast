@@ -4,7 +4,7 @@
 </p>
 
 
-REQUETIMENTOS
+REQUERIMENTOS
 ------------
 
 MYSQL [WINDOWS DONWLOAD](https://dev.mysql.com/downloads/installer/)<br>
